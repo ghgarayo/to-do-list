@@ -1,5 +1,7 @@
 import styles from './AddTaskBar.module.css'
 
+import { v4 as uuidv4 } from 'uuid'
+
 import { PlusCircle } from 'phosphor-react'
 import { ChangeEvent, FormEvent, InvalidEvent, useState } from 'react'
 import { Task } from '../App'
@@ -14,7 +16,7 @@ export function AddTaskBar({ onCreateNewTask }: AddTaskBarProps) {
   function handleCreateNewTask(event: FormEvent) {
     event.preventDefault()
     const newTask = {
-      id: Math.random(),
+      id: uuidv4(),
       description: taskDescription,
       isComplete: false,
     }

@@ -5,15 +5,18 @@ import './App.css'
 import { useState } from 'react'
 import { EmptyList } from './components/EmptyList'
 import { TaskCounter } from './components/TaskCounter'
+import { TaskList } from './components/TaskList'
 
 export interface Task {
-  id: number
+  id: string
   description: string
   isComplete: boolean
 }
 
 export default function App() {
   const [taskList, setTaskList] = useState<Task[]>([])
+
+  console.log('taskList', taskList)
 
   function createNewTask(newTask: Task) {
     setTaskList([...taskList, newTask])
@@ -25,18 +28,7 @@ export default function App() {
       <AddTaskBar onCreateNewTask={createNewTask} />
       <TaskCounter taskList={taskList} />
 
-      {taskList.length > 0 ? (
-        <div>
-          <p>Existem {taskList.length} tarefas na lista:</p>
-          <ul>
-            {taskList.map((task) => (
-              <li key={task.id}>{task.description}</li>
-            ))}
-          </ul>
-        </div>
-      ) : (
-        <EmptyList />
-      )}
+      {taskList.length > 0 ? <TaskList taskList={taskList} /> : <EmptyList />}
     </>
   )
 }
