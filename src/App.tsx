@@ -16,8 +16,6 @@ export interface Task {
 export default function App() {
   const [taskList, setTaskList] = useState<Task[]>([])
 
-  console.log('taskList', taskList)
-
   function createNewTask(newTask: Task) {
     setTaskList([...taskList, newTask])
   }

@@ -1,7 +1,7 @@
 import styles from './TaskList.module.css'
 
 import { Task } from '../App'
-import { useState, MouseEvent } from 'react'
+import { useState, MouseEvent, useEffect } from 'react'
 
 interface TaskListProps {
   taskList: Task[]
@@ -9,6 +9,10 @@ interface TaskListProps {
 
 export function TaskList({ taskList }: TaskListProps) {
   const [tasks, setTasks] = useState<Task[]>(taskList)
+
+  useEffect(() => {
+    setTasks(taskList)
+  }, [taskList])
 
   function handleTaskStatus(event: MouseEvent<HTMLButtonElement>) {
     const markTaskAsCompleted = event.currentTarget.value
