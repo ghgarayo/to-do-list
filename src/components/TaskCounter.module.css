@@ -1,0 +1,26 @@
+.taskCounterContainer{
+  display: flex;
+  justify-content: space-between;
+
+  width: 80%;
+  padding-bottom: 1rem;
+  margin: 0 auto;
+
+  border-bottom: 1px solid var(--gray-700);
+
+}
+
+.createdTasks{
+}
+
+.concludedTasks{
+}
+
+.taskCounterContainer p span{
+  font-size: 0.875rem;
+  color: var(--gray-300);
+  
+  background-color: var(--gray-700);
+  padding: 0.5rem;
+  border-radius: 15px;
+}
