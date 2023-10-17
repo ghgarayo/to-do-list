@@ -50,7 +50,6 @@ export function AddTaskBar({ onCreateNewTask }: AddTaskBarProps) {
         disabled={!taskDescription}
       >
         <PlusCircle size={32} />
-        Adicionar
       </button>
     </form>
   )

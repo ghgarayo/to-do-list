@@ -7,8 +7,8 @@ interface TaskCounterProps {
 }
 
 export function TaskCounter({ taskList }: TaskCounterProps) {
-  const openTasksCount = taskList.filter((task) => !task.isComplete).length
-  const finishedTasksCount = taskList.filter((task) => task.isComplete).length
+  const openTasksCount = taskList.length
+  const completedTaskCount = taskList.filter((task) => task.isComplete).length
 
   return (
     <div className={styles.taskCounterContainer}>
@@ -18,7 +18,7 @@ export function TaskCounter({ taskList }: TaskCounterProps) {
       <p className={styles.concludedTasks}>
         Tarefas concluídas{' '}
         <span>
-          {finishedTasksCount} de {taskList.length}
+          {completedTaskCount} de {taskList.length}
         </span>
       </p>
     </div>

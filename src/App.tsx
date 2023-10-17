@@ -21,13 +21,28 @@ export default function App() {
     setTaskList(newTaskList)
   }
 
+  function markTaskAsCompleted(id: string) {
+    const taskListDraft = [...taskList]
+    const updatedTaskList = taskListDraft.map((task) =>
+      task.id !== id ? task : { ...task, isComplete: true },
+    )
+    setTaskList(updatedTaskList)
+  }
+
   return (
     <>
       <Header />
       <AddTaskBar onCreateNewTask={createNewTask} />
       <TaskCounter taskList={taskList} />
 
-      {taskList.length > 0 ? <TaskList taskList={taskList} /> : <EmptyList />}
+      {taskList.length > 0 ? (
+        <TaskList
+          taskList={taskList}
+          onMarkTaskAsCompleted={markTaskAsCompleted}
+        />
+      ) : (
+        <EmptyList />
+      )}
     </>
   )
 }

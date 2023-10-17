@@ -1,16 +1,23 @@
-.header{
+.header {
 
-    background: var(--gray-800);
-    padding: 2rem;
+  height: 140px;
 
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: bold;
+  padding: 2rem;
 
-    box-shadow: 0 0 150px rgb(0, 0, 0);
-    
-  }
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
 
-  .header p{
-    font-size: 2.5rem;
-  }
+  background: var(--gray-900);
+  box-shadow: 0 0 150px rgb(0, 0, 0);
+}
+
+.header p {
+  font-size: 2.5rem;
+  background-image: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+
+}

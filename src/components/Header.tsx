@@ -4,7 +4,7 @@ export function Header() {
   return (
     <>
       <header className={styles.header}>
-        <p>todo</p>
+        <p>to.do | Gerencie as suas tarefas diárias</p>
       </header>
     </>
   )

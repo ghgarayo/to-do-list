@@ -1,62 +1,51 @@
 import styles from './TaskList.module.css'
 
 import { Task } from '../App'
-import { useState, MouseEvent, useEffect } from 'react'
+import { CheckCircle } from 'phosphor-react'
 
 interface TaskListProps {
   taskList: Task[]
+  onMarkTaskAsCompleted: (id: string) => void
 }
 
-export function TaskList({ taskList }: TaskListProps) {
-  const [tasks, setTasks] = useState<Task[]>(taskList)
-
-  useEffect(() => {
-    setTasks(taskList)
-  }, [taskList])
-
-  function handleTaskStatus(event: MouseEvent<HTMLButtonElement>) {
-    const markTaskAsCompleted = event.currentTarget.value
-    const updatedTasks = tasks.map((task) =>
-      task.id !== markTaskAsCompleted ? task : { ...task, isComplete: true },
-    )
-    setTasks(updatedTasks)
-  }
-
+export function TaskList({ taskList, onMarkTaskAsCompleted }: TaskListProps) {
   return (
     <div className={styles.taskListContainer}>
-      <div>
-        <h2>Em Aberto</h2>
-        <ul>
-          {tasks.map(
-            (task) =>
-              !task.isComplete && (
-                <li key={task.id} className={styles.task}>
-                  {task.description}
-                  <button
-                    className={styles.completeTaskBtn}
-                    value={task.id}
-                    onClick={handleTaskStatus}
-                  >
-                    Marcar como Finalizada
-                  </button>
-                </li>
-              ),
-          )}
-        </ul>
-      </div>
-      <div>
-        <h2>Finalizadas</h2>
-        <ul>
-          {tasks.map(
-            (task) =>
-              task.isComplete && (
-                <li key={task.id} className={styles.task}>
-                  {task.description}
-                </li>
-              ),
-          )}
-        </ul>
-      </div>
+      <h2>Em Aberto</h2>
+      <ul>
+        {taskList.map(
+          (task) =>
+            !task.isComplete && (
+              <li key={task.id} className={styles.openTask}>
+                <p className={styles.taskDescription}>{task.description}</p>
+                <button
+                  className={styles.completeTaskBtn}
+                  value={task.id}
+                  onClick={() => onMarkTaskAsCompleted(task.id)}
+                >
+                  <CheckCircle
+                    size={32}
+                    weight="fill"
+                    fill="var(--red-700)"
+                    alt="Marcar como concluída"
+                  />
+                </button>
+              </li>
+            ),
+        )}
+      </ul>
+      <span></span>
+      <h2>Finalizadas</h2>
+      <ul>
+        {taskList.map(
+          (task) =>
+            task.isComplete && (
+              <li key={task.id} className={styles.completedTask}>
+                <p className={styles.taskDescription}>{task.description}</p>
+              </li>
+            ),
+        )}
+      </ul>
     </div>
   )
 }

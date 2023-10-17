@@ -1,18 +1,71 @@
-.taskListContainer{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
+.taskListContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-  width: 80%;
+  min-width: 50%;
+  max-width: 60%;
   margin: 2rem auto;
   padding: 1rem;
-  border-radius: 0.5rem;
-  background: var(--gray-700)
+  border-radius: 45px;
+  background: var(--gray-800);
 
 }
 
-.taskListContainer ul{
-  list-style:none;
-  width:100%;
+.taskListContainer ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.taskListContainer span {
+  width: 100%;
+  margin: 2rem 0;
+  border-bottom: 1px solid var(--red-700);
+}
+
+.openTask, .completedTask {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  min-height: 60px;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  background: transparent;
+  border: 1px solid var(--red-700);
+  border-radius: 8px;
+}
+
+.taskDescription {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--gray-300);
+  overflow: hidden; /* Esconde o conteúdo excedente */
+  word-wrap: break-word; /* Permite quebrar palavras longas, se necessário */
+}
+
+
+.completeTaskBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 3rem;
+  height: 3rem;
+  margin: 0 0.5rem;
+  border: none;
+  background: transparent;
+}
+
+.completeTaskBtn > svg{
+  width: 2rem;
+  height: 2rem;
+  color: var(--green-500);
 }
