@@ -47,8 +47,8 @@
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--gray-300);
-  overflow: hidden; /* Esconde o conteúdo excedente */
-  word-wrap: break-word; /* Permite quebrar palavras longas, se necessário */
+  overflow: hidden;
+  word-wrap: break-word; 
 }
 
 
@@ -68,4 +68,8 @@
   width: 2rem;
   height: 2rem;
   color: var(--green-500);
+}
+
+@media (max-width: 768px) {
+  
 }

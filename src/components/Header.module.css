@@ -21,3 +21,17 @@
 
 
 }
+
+
+@media (max-width: 768px) {
+ 
+  .header {
+    height: 80px;
+    padding: 1rem;
+  }
+
+  .header p {
+    font-size: 1.25rem;
+  }
+  
+}
