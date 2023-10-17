@@ -1,7 +1,7 @@
 .header{
 
     background: var(--gray-800);
-    padding: 1.5rem;
+    padding: 2rem;
 
     text-align: center;
     font-size: 1.5rem;
@@ -9,4 +9,8 @@
 
     box-shadow: 0 0 150px rgb(0, 0, 0);
     
+  }
+
+  .header p{
+    font-size: 2.5rem;
   }

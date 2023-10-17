@@ -17,7 +17,8 @@ export default function App() {
   const [taskList, setTaskList] = useState<Task[]>([])
 
   function createNewTask(newTask: Task) {
-    setTaskList([...taskList, newTask])
+    const newTaskList = [...taskList, newTask]
+    setTaskList(newTaskList)
   }
 
   return (

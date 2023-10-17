@@ -15,6 +15,7 @@ export function AddTaskBar({ onCreateNewTask }: AddTaskBarProps) {
 
   function handleCreateNewTask(event: FormEvent) {
     event.preventDefault()
+
     const newTask = {
       id: uuidv4(),
       description: taskDescription,

@@ -4,9 +4,7 @@ export function Header() {
   return (
     <>
       <header className={styles.header}>
-        <span>
-          <h1>todo</h1>
-        </span>
+        <p>todo</p>
       </header>
     </>
   )
