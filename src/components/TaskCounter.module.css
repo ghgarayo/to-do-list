@@ -16,7 +16,24 @@
   font-size: 0.875rem;
   color: var(--gray-300);
   
-  background-color: var(--gray-700);
-  padding: 0.5rem;
+  background-color: var(--red-700);
+  padding: 0.25rem;
   border-radius: 15px;
+}
+
+
+@media (max-width: 768px) {
+  .taskCounterContainer{
+    min-width: 90%;
+    max-width: 90%;
+  }
+
+  .taskCounterContainer p{
+    font-size: 0.875rem;
+  }
+
+  .taskCounterContainer p span{
+    font-size: 0.75rem;
+  }
+
 }
